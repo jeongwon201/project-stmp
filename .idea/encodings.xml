@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/Login/FindIdFrame.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/Login/FindPwFrame.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/Login/LoginFrame.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/Login/RegisterFrame.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/Login/UserDAO.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/PM/PAddFrame.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/PM/PDelFrame.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/PM/PlayerDAO.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/src/com/java/ex/TM/TacticsDAO.java" charset="x-windows-949" />
+    <file url="PROJECT" charset="x-windows-949" />
+  </component>
+</project>
