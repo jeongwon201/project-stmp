@@ -18,11 +18,11 @@ public class FindIdFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 
 	public FindIdFrame() {
-		setTitle("아이디/비밀번호 찾기");
-		setSize(285, 185);
+		setTitle("아이디 찾기");
+		setSize(292, 190);
 		setResizable(false);
-		setLocation(800, 200);
-		
+		setLocationRelativeTo(null);
+
 		JPanel panel = new JPanel();
 		FindPanel(panel);
 		

@@ -54,9 +54,9 @@ public class TMFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 	public TMFrame() {
 		setTitle("전술 관리");
-		setSize(1000, 629);
+		setSize(1005, 632);
 		setResizable(false);
-		setLocation(500, 200);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		tmPanel(panel);

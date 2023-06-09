@@ -12,7 +12,7 @@ public class TacticsDAO {
 	static String driver = "org.mariadb.jdbc.Driver";
 	static String url = "jdbc:mariadb://localhost:3307/stmp";
 	static String dbId = "root";
-	static String dbPw = "mariadb"; 
+	static String dbPw = "1234";
 	
 	Connection conn = null;
 	
@@ -25,7 +25,7 @@ public class TacticsDAO {
 	    try {
 	      String sql = "select name from player order by backNum asc";
 	      pst = conn.prepareStatement(sql);
-	      rs = pst.executeQuery(sql);
+	      rs = pst.executeQuery();
 	 
 	      while (rs.next()) {
 			name.add(rs.getString("name"));
@@ -58,7 +58,7 @@ public class TacticsDAO {
 	    try {
 	      String sql = "select name from tactics order by name asc";
 	      pst = conn.prepareStatement(sql);
-	      rs = pst.executeQuery(sql);
+	      rs = pst.executeQuery();
 	 
 	      while (rs.next()) {
 			name.add(rs.getString("name"));

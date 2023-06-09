@@ -21,9 +21,9 @@ public class TDelFrame extends JFrame {
 	
 	public TDelFrame() {
 		setTitle("전술 삭제");
-		setSize(360, 130);
+		setSize(370, 135);
 		setResizable(false);
-		setLocation(800, 400);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		tDelPanel(panel);

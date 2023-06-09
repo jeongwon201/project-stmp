@@ -25,11 +25,10 @@ public class LoginFrame extends JFrame {
 	
 	public LoginFrame() {
 		setTitle("·Î±×ÀÎ");
-		setSize(345, 185);
+		setSize(360, 185);
 		setResizable(false);
-		setLocation(800, 200);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
 		JPanel panel = new JPanel();
 		LoginPanel(panel);
 		

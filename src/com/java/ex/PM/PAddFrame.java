@@ -31,8 +31,8 @@ public class PAddFrame extends JFrame {
 	
 	public PAddFrame() {
 		setTitle("선수 추가");
-		setSize(300, 415);
-		setLocation(850, 230);
+		setSize(310, 422);
+		setLocationRelativeTo(null);
 		setResizable(false);
 		
 		JPanel panel = new JPanel();

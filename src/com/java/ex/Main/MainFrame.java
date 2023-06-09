@@ -54,9 +54,9 @@ public class MainFrame extends JFrame {
 	
 	public MainFrame() {
 		setTitle("Soccer Tactical Management Program");
-		setSize(400, 800);
+		setSize(410, 805);
 		setResizable(false);
-		setLocation(800, 100);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();

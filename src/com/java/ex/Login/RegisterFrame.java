@@ -19,9 +19,9 @@ public class RegisterFrame extends JFrame {
 	
 	public RegisterFrame() {
 		setTitle("회원가입");
-		setSize(390, 270);
+		setSize(395, 285);
 		setResizable(false);
-		setLocation(800, 200);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		RegisterPanel(panel);

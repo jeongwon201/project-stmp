@@ -23,8 +23,8 @@ public class UserFrame extends JFrame {
 	
 	public UserFrame() {
 		setTitle("³» Á¤º¸");
-		setSize(285, 320);
-		setLocation(850, 230);
+		setSize(295, 325);
+		setLocationRelativeTo(null);
 		setResizable(false);
 		
 		JPanel panel = new JPanel();
@@ -75,7 +75,7 @@ public class UserFrame extends JFrame {
 					btnConfirm.setEnabled(false);
 					tfId.setEnabled(false); tfId.setText(userDTO.getId());
 					tfPw.setEnabled(true); tfPw.setText(userDTO.getPw());
-					tfName.setEnabled(true); tfName.setText(userDTO.getId());
+					tfName.setEnabled(true); tfName.setText(userDTO.getName());
 					tfBirth.setEnabled(true); tfBirth.setText(userDTO.getBirth());
 					tfPhone.setEnabled(true); tfPhone.setText(userDTO.getPhone());
 					tfEmail.setEnabled(true); tfEmail.setText(userDTO.getEmail());

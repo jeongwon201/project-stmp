@@ -26,8 +26,8 @@ public class PDelFrame extends JFrame {
 	
 	public PDelFrame() {
 		setTitle("선수 삭제");
-		setSize(300, 200);
-		setLocation(850, 300);
+		setSize(305, 212);
+		setLocationRelativeTo(null);
 		setResizable(false);
 		
 		JPanel panel = new JPanel();

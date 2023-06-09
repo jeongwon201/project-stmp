@@ -17,10 +17,10 @@ public class FindPwFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 
 	public FindPwFrame() {
-		setTitle("아이디/비밀번호 찾기");
-		setSize(285, 185);
+		setTitle("비밀번호 찾기");
+		setSize(292, 190);
 		setResizable(false);
-		setLocation(800, 200);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		FindPanel(panel);
@@ -59,7 +59,7 @@ public class FindPwFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				UserDAO UserDao = new UserDAO();
-				String pw = UserDao.findUserId(tfUserId.getText(), tfUserPhone.getText());
+				String pw = UserDao.findUserPw(tfUserId.getText(), tfUserPhone.getText());
 				if(tfUserId.getText().equals("") || tfUserPhone.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "입력하지않은 정보가 있습니다, 확인 후 다시 시도해주세요.", "비밀번호 찾기", JOptionPane.ERROR_MESSAGE);
 				} else {

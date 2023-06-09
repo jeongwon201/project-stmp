@@ -27,8 +27,8 @@ public class PModFrame extends JFrame {
 	
 	public PModFrame() {
 		setTitle("선수 수정");
-		setSize(300, 480);
-		setLocation(850, 250);
+		setSize(310, 490);
+		setLocationRelativeTo(null);
 		setResizable(false);
 		
 		JPanel panel = new JPanel();

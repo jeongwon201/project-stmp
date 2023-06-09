@@ -201,12 +201,12 @@ public class UserDAO {
 			conn.setAutoCommit(false);
 			String sql = "update user set pw=?, name=?, birth=?, phone=?, email=? where id=?";
 			PreparedStatement pst = conn.prepareStatement(sql);
-			pst.setString(1, userDTO.getId());
-			pst.setString(2, userDTO.getPw());
-			pst.setString(3, userDTO.getName());
-			pst.setString(4, userDTO.getBirth());
-			pst.setString(5, userDTO.getPhone());
-			pst.setString(6, userDTO.getEmail());
+			pst.setString(1, userDTO.getPw());
+			pst.setString(2, userDTO.getName());
+			pst.setString(3, userDTO.getBirth());
+			pst.setString(4, userDTO.getPhone());
+			pst.setString(5, userDTO.getEmail());
+			pst.setString(6, userDTO.getId());
 			if(1 == pst.executeUpdate()) {
 				result = true;
 			} else {

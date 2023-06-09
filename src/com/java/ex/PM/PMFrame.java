@@ -27,8 +27,8 @@ public class PMFrame extends JFrame {
 	
 	public PMFrame() {
 		setTitle("선수 관리");
-		setSize(800, 500);
-		setLocation(590, 200);
+		setSize(810, 505);
+		setLocationRelativeTo(null);
 		setResizable(false);
 		
 		JPanel panel = new JPanel();
@@ -97,7 +97,7 @@ public class PMFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				PlayerDAO playerDAO = new PlayerDAO();
 				data = playerDAO.getPlayer();
-				model = new DefaultTableModel(playerDAO.getPlayer(), getColumn()) {
+				model = new DefaultTableModel(data, getColumn()) {
 					public boolean isCellEditable(int row, int col) {
 		                return false;
 		            }
@@ -116,6 +116,7 @@ public class PMFrame extends JFrame {
                 return false;
             }
         };
+
 		table = new JTable(model);
 		scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(10, 100, 775, 300);

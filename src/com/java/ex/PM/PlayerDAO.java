@@ -1,10 +1,6 @@
 package com.java.ex.PM;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -14,7 +10,7 @@ public class PlayerDAO {
 	static String driver = "org.mariadb.jdbc.Driver";
 	static String url = "jdbc:mariadb://localhost:3307/stmp";
 	static String dbId = "root";
-	static String dbPw = "mariadb"; 
+	static String dbPw = "1234";
 	
 	Connection conn = null;
 	
@@ -221,7 +217,7 @@ public class PlayerDAO {
 	    try {
 	      String sql = "select * from player order by backNum asc";
 	      pst = conn.prepareStatement(sql);
-	      rs = pst.executeQuery(sql);
+	      rs = pst.executeQuery();
 	 
 	      while (rs.next()) {
 			String backNum = rs.getString("backNum");
@@ -252,6 +248,7 @@ public class PlayerDAO {
 			this.closePst(pst);
 			this.closeDB(conn);
 		}
+
 	    return data;
 	}
 	
