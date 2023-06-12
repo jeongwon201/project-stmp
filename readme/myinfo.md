@@ -1,12 +1,12 @@
 # project-stmp | 축구 전술 관리 프로그램 - 내 정보
 
-내 정보와 관련된 항목에 대한 설명 및 실행 화면입니다.  
+내 정보와 관련된 항목에 대한 설명 및 구동입니다.  
 
 <hr />
 
 ### 내 정보
 <div>
-  <img src="readme/images/myinfo.gif" style="width: 300px; height: auto;"/>
+  <img src="images/myinfo.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
 
@@ -14,7 +14,7 @@ ID 와 PW 를 통해 확인 후 사용자 정보를 불러옵니다.
 
 ### 수정
 <div>
-  <img src="readme/images/myinfo-update.gif" style="width: 300px; height: auto;"/>
+  <img src="images/myinfo-update.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
 
@@ -22,7 +22,7 @@ ID 와 PW 를 통해 확인 후 사용자 정보를 불러옵니다.
 
 ### 탈퇴
 <div>
-  <img src="readme/images/myinfo-withdraw.gif" style="width: 300px; height: auto;"/>
+  <img src="images/myinfo-withdraw.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
 
