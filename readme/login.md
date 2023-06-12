@@ -6,7 +6,7 @@
 
 ### 회원 가입
 <div>
-  <img src="readme/images/register.gif" style="width: 300px; height: auto;"/>
+  <img src="images/register.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
 
@@ -18,7 +18,7 @@ ID 중복 확인이 완료되면 ID 텍스트 박스와 중복 확인 버튼이 
 
 ### ID 찾기
 <div>
-  <img src="readme/images/find-id.gif" style="width: 300px; height: auto;"/>
+  <img src="images/find-id.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
 
@@ -27,7 +27,7 @@ ID 중복 확인이 완료되면 ID 텍스트 박스와 중복 확인 버튼이 
 
 ### PW 찾기
 <div>
-  <img src="readme/images/find-pw.gif" style="width: 300px; height: auto;"/>
+  <img src="images/find-pw.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
 
@@ -36,6 +36,6 @@ ID와 연락처를 통해 분실된 PW 를 찾을 수 있습니다.
 
 ### 로그인
 <div>
-  <img src="readme/images/login.gif" style="width: 300px; height: auto;"/>
+  <img src="images/login.gif" style="width: 300px; height: auto;"/>
 </div>
 <br />
