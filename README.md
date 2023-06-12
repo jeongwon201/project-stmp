@@ -9,7 +9,7 @@
 
 실행 시 최초 화면입니다.  
 <div>
-  <img src="readme-images/login.png" />
+  <img src="readme/images/login.png" />
 </div>
 <br />
 
@@ -19,7 +19,7 @@ ID 또는 PW 를 분실했을 경우 ID 찾기 · PW 찾기 기능을 통해 분
 
 로그인 성공 시 메인으로 이동됩니다.  
 <div>
-  <img src="readme-images/main.png" />
+  <img src="readme/images/main.png" />
 </div>
 <br />
 
@@ -29,7 +29,7 @@ ID 또는 PW 를 분실했을 경우 ID 찾기 · PW 찾기 기능을 통해 분
 ### 선수 관리
 선수 관리 화면입니다.  
 <div>
-  <img src="readme-images/pm.png" />
+  <img src="readme/images/pm.png" />
 </div>
 <br />
 
@@ -40,7 +40,7 @@ ID 또는 PW 를 분실했을 경우 ID 찾기 · PW 찾기 기능을 통해 분
 ### 전술 관리
 전술 관리 화면입니다.  
 <div>
-  <img src="readme-images/tm.png" />
+  <img src="readme/images/tm.png" />
 </div>
 <br />
 
@@ -60,7 +60,7 @@ ID 또는 PW 를 분실했을 경우 ID 찾기 · PW 찾기 기능을 통해 분
 ### 내 정보
 내 정보 화면입니다.
 <div>
-  <img src="readme-images/myinfo.png" />
+  <img src="readme/images/myinfo.png" />
 </div>
 <br />
 
