@@ -1,12 +1,12 @@
 # project-stmp | 축구 전술 관리 프로그램 - 선수 관리
 
-선수 관리와 관련된 항목에 대한 설명 및 실행 화면입니다.  
+선수 관리와 관련된 항목에 대한 설명 및 구동입니다.  
 
 <hr />
 
 ### 선수 추가
 <div>
-  <img src="readme/images/pm-add.gif" style="width: 500px; height: auto;"/>
+  <img src="images/pm-add.gif" style="width: 500px; height: auto;"/>
 </div>
 <br />
 
@@ -21,7 +21,7 @@
 
 ### 선수 수정
 <div>
-  <img src="readme/images/pm-update.gif" style="width: 500px; height: auto;"/>
+  <img src="images/pm-update.gif" style="width: 500px; height: auto;"/>
 </div>
 <br />
 
@@ -34,7 +34,7 @@
 
 ### 선수 삭제
 <div>
-  <img src="readme/images/pm-remove.gif" style="width: 500px; height: auto;"/>
+  <img src="images/pm-remove.gif" style="width: 500px; height: auto;"/>
 </div>
 <br />
 
