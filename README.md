@@ -67,3 +67,8 @@ ID 또는 PW 를 분실했을 경우 ID 찾기 · PW 찾기 기능을 통해 분
 보안을 위해 ID 와 PW 를 입력하여 확인 후 수정 또는 탈퇴가 가능합니다.  
 
 ID 는 수정할 수 없으며, ID 를 제외한 모든 항목은 수정이 가능합니다.
+
+<br /><br />
+> Language - JAVA 1.8<br />
+> Database - MariaDB <br />
+> IDE - Eclipse <br />
