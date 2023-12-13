@@ -1,9 +1,12 @@
 # project-stmp | 축구 전술 관리 프로그램
 > 나만의 축구 전술을 생성하고 관리하는 자바 프로그램
 
-<img src="https://img.shields.io/badge/stmp-1.0 ver-blue"/>
-<img alt="GitHub License" src="https://img.shields.io/github/license/jeongwon201/project-stmp">
-
+<div>
+  <img src="https://img.shields.io/badge/stmp-1.0 ver-blue"/>
+  <img alt="GitHub License" src="https://img.shields.io/github/license/jeongwon201/project-stmp">
+</div>
+<br />
+<br />
 
 <div align="center">
     <image src="readme/images/main.png" style="float: left; width: 150px; height: 350px;"/>
@@ -23,6 +26,7 @@
 ## 시작하기
 
 ### 설치
+> Jdk 8 이상, Maven 이 필요합니다.
 
 윈도우:
 1. Git Repository 를 Clone 합니다.
@@ -112,11 +116,14 @@ _더 많은 예제와 사용법은 다음 링크를 참고하세요._
 - <a href="https://github.com/jeongwon201/project-stmp/blob/main/readme/myinfo.md" target="_blank"> 내 정보</a>
 
 ## 업데이트 내역
-
+* 1.1.1
+  * README.md 수정
 * 1.1.0
   * MariaDB to SQLite
   * 내부 파일 구조 변경
   * ImageLoader 추가
+* 1.0.1
+  * README.md 추가
 * 1.0.0
     * 첫 출시
 * 0.0.1
