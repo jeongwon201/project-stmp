@@ -1,5 +1,7 @@
 package com.java.pm;
 
+import com.java.utils.ImageLoader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +17,7 @@ public class PModFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 	
 	public PModFrame() {
-		setTitle("¼±¼ö ¼öÁ¤");
+		setTitle("ì„ ìˆ˜ ìˆ˜ì •");
 		setSize(310, 490);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -29,24 +31,26 @@ public class PModFrame extends JFrame {
 	}
 	
 	public void PAddPanel(JPanel panel) {
+		ImageLoader imageLoader = new ImageLoader();
+
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel label_logo = new JLabel(new ImageIcon("Images/everton_logo_small.png"));
+		JLabel label_logo = new JLabel(new ImageIcon(imageLoader.getImage("images/everton_logo_small.png")));
 		label_logo.setBounds(5, 5, 50, 50);
 		panel.add(label_logo);
 		
-		JLabel labelPanelName = new JLabel("¼± ¼ö ¼ö Á¤");
-		labelPanelName.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		JLabel labelPanelName = new JLabel("ì„  ìˆ˜ ìˆ˜ ì •");
+		labelPanelName.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 		labelPanelName.setForeground(color);
 		labelPanelName.setBounds(65, 0, 790, 50);
 		panel.add(labelPanelName);
 		
-		JLabel labelModExplain = new JLabel("¼öÁ¤ÇÒ ¼±¼öÀÇ µî ¹øÈ£À» ÀÔ·ÂÇÏ¼¼¿ä.");
+		JLabel labelModExplain = new JLabel("ìˆ˜ì •í•  ì„ ìˆ˜ì˜ ë“± ë²ˆí˜¸ì„ ì…ë ¥í•˜ì„¸ìš”.");
 		labelModExplain.setBounds(10, 65, 280, 25);
 		panel.add(labelModExplain);
 		
-		JLabel labelModName = new JLabel("µî ¹øÈ£");
+		JLabel labelModName = new JLabel("ë“± ë²ˆí˜¸");
 		labelModName.setBounds(10, 95, 50, 25);
 		panel.add(labelModName);
 		
@@ -54,7 +58,7 @@ public class PModFrame extends JFrame {
 		tfModBackNum.setBounds(70, 95, 50, 25);
 		panel.add(tfModBackNum);
 		
-		btnConfirm = new JButton("È®ÀÎ");
+		btnConfirm = new JButton("í™•ì¸");
 		btnConfirm.setBounds(135, 95, 60, 25);
 		btnConfirm.setBackground(color);
 		btnConfirm.setForeground(Color.white);
@@ -65,7 +69,7 @@ public class PModFrame extends JFrame {
 				PlayerDAO playerDAO = new PlayerDAO();
 				if(playerDAO.duplicateCheck(Integer.parseInt(tfModBackNum.getText()))) {
 					PlayerDTO playerDTO = playerDAO.confirmPlayer(Integer.parseInt(tfModBackNum.getText()));
-					JOptionPane.showMessageDialog(null, "È®ÀÎµÇ¾ú½À´Ï´Ù.");
+					JOptionPane.showMessageDialog(null, "í™•ì¸ë˜ì—ˆìŠµë‹ˆë‹¤.");
 					tfBackNum.setText(Integer.toString(playerDTO.getBackNum()));
 					tfName.setText(playerDTO.getName());
 					tfBirth.setText(playerDTO.getBirth());
@@ -76,16 +80,16 @@ public class PModFrame extends JFrame {
 					
 					btnMod.setEnabled(true);
 				} else {
-					JOptionPane.showMessageDialog(null, "ÇØ´ç µî ¹øÈ£ÀÇ ¼±¼ö°¡ ¾ø½À´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "í•´ë‹¹ ë“± ë²ˆí˜¸ì˜ ì„ ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
 		
-		JLabel labelLine = new JLabel(new ImageIcon("Images/line.png"));
+		JLabel labelLine = new JLabel(new ImageIcon(imageLoader.getImage("images/line.png")));
 		labelLine.setBounds(10, 125, 275, 25);
 		panel.add(labelLine);
 		
-		JLabel labelBackNum = new JLabel("µî ¹øÈ£");
+		JLabel labelBackNum = new JLabel("ë“± ë²ˆí˜¸");
 		labelBackNum.setBounds(10, 155, 50, 25);
 		panel.add(labelBackNum);
 		
@@ -94,7 +98,7 @@ public class PModFrame extends JFrame {
 		tfBackNum.setEnabled(false);
 		panel.add(tfBackNum);
 		
-		JLabel labelPos = new JLabel("¼±È£ Æ÷Áö¼Ç");
+		JLabel labelPos = new JLabel("ì„ í˜¸ í¬ì§€ì…˜");
 		labelPos.setBounds(10, 185, 70, 25);
 		panel.add(labelPos);
 		
@@ -110,7 +114,7 @@ public class PModFrame extends JFrame {
 		rdoGroup.add(FW); rdoGroup.add(MF); rdoGroup.add(DF); rdoGroup.add(GK);
 		panel.add(FW); panel.add(MF); panel.add(DF); panel.add(GK);
 		
-		JLabel labelName = new JLabel("ÀÌ¸§");
+		JLabel labelName = new JLabel("ì´ë¦„");
 		labelName.setBounds(10, 215, 30, 25);
 		panel.add(labelName);
 		
@@ -118,7 +122,7 @@ public class PModFrame extends JFrame {
 		tfName.setBounds(50, 215, 180, 25);
 		panel.add(tfName);
 		
-		JLabel labelBirth = new JLabel("»ı³â¿ùÀÏ");
+		JLabel labelBirth = new JLabel("ìƒë…„ì›”ì¼");
 		labelBirth.setBounds(10, 245, 60, 25);
 		panel.add(labelBirth);
 		
@@ -130,7 +134,7 @@ public class PModFrame extends JFrame {
 		labelBirthEx.setBounds(190, 245, 100, 25);
 		panel.add(labelBirthEx);
 		
-		JLabel labelNationality = new JLabel("±¹Àû");
+		JLabel labelNationality = new JLabel("êµ­ì ");
 		labelNationality.setBounds(10, 275, 30, 25);
 		panel.add(labelNationality);
 		
@@ -138,7 +142,7 @@ public class PModFrame extends JFrame {
 		tfNationality.setBounds(50, 275, 100, 25);
 		panel.add(tfNationality);
 		
-		JLabel labelHeight = new JLabel("Å°");
+		JLabel labelHeight = new JLabel("í‚¤");
 		labelHeight.setBounds(10, 305, 20, 25);
 		panel.add(labelHeight);
 		
@@ -146,7 +150,7 @@ public class PModFrame extends JFrame {
 		tfHeight.setBounds(40, 305, 60, 25);
 		panel.add(tfHeight);
 		
-		JLabel labelWeight = new JLabel("¸ö¹«°Ô");
+		JLabel labelWeight = new JLabel("ëª¸ë¬´ê²Œ");
 		labelWeight.setBounds(10, 335, 50, 25);
 		panel.add(labelWeight);
 		
@@ -154,7 +158,7 @@ public class PModFrame extends JFrame {
 		tfWeight.setBounds(70, 335, 60, 25);
 		panel.add(tfWeight);
 		
-		JLabel labelComment = new JLabel("ÄÚ¸àÆ®");
+		JLabel labelComment = new JLabel("ì½”ë©˜íŠ¸");
 		labelComment.setBounds(10, 365, 50, 25);
 		panel.add(labelComment);
 		
@@ -162,7 +166,7 @@ public class PModFrame extends JFrame {
 		tfComment.setBounds(10, 365, 275, 25);
 		panel.add(tfComment);
 		
-		btnMod = new JButton("¼±¼ö ¼öÁ¤");
+		btnMod = new JButton("ì„ ìˆ˜ ìˆ˜ì •");
 		btnMod.setBounds(70, 410, 100, 30);
 		btnMod.setBackground(color);
 		btnMod.setForeground(Color.white);
@@ -185,20 +189,20 @@ public class PModFrame extends JFrame {
 				
 				if(tfName.getText().equals("") || tfBirth.getText().equals("") || tfNationality.getText().equals("")
 						|| tfHeight.getText().equals("") || tfWeight.equals("") || tfComment.getText().equals("")) {
-						JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				} else {
 					if(playerDAO.updatePlayer(playerDTO)) {
-						JOptionPane.showMessageDialog(null, "¼±¼ö ¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "ì„ ìˆ˜ ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "¼±¼ö ¼öÁ¤ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ì„ ìˆ˜ ìˆ˜ì • ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 						dispose();
 					}
 				}
 			}
 		});
 		
-		btnCancel = new JButton("Ãë¼Ò");
+		btnCancel = new JButton("ì·¨ì†Œ");
 		btnCancel.setBounds(180, 410, 100, 30);
 		btnCancel.setBackground(color);
 		btnCancel.setForeground(Color.white);

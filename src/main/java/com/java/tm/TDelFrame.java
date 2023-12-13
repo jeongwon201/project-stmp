@@ -14,7 +14,7 @@ public class TDelFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 	
 	public TDelFrame() {
-		setTitle("Àü¼ú »èÁ¦");
+		setTitle("ì „ìˆ  ì‚­ì œ");
 		setSize(370, 135);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -36,7 +36,7 @@ public class TDelFrame extends JFrame {
 		cbTactics.setBackground(Color.white);
 		panel.add(cbTactics);
 		
-		btnDel = new JButton("»èÁ¦");
+		btnDel = new JButton("ì‚­ì œ");
 		btnDel.setBounds(195, 65, 70, 25);
 		btnDel.setBackground(color);
 		btnDel.setForeground(Color.white);
@@ -45,24 +45,24 @@ public class TDelFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(cbTactics.getSelectedIndex() == 0) {
-					JOptionPane.showMessageDialog(null, "»èÁ¦ÇÒ Àü¼úÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì‚­ì œí•  ì „ìˆ ì„ ì„ íƒí•´ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				} else {
-					int result = JOptionPane.showConfirmDialog(null, "»èÁ¦ÇÏ½Ã°Ú½À´Ï±î?", "»èÁ¦", JOptionPane.OK_CANCEL_OPTION);
+					int result = JOptionPane.showConfirmDialog(null, "ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì‚­ì œ", JOptionPane.OK_CANCEL_OPTION);
 					if(result == 0) {
 						if(tacticsDAO.delTactics(cbTactics.getSelectedItem().toString())) {
-							JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+							JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 							dispose();
 						} else {
-							JOptionPane.showMessageDialog(null, "»èÁ¦ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null, "ì‚­ì œ ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 						}
 					} else {
-						JOptionPane.showMessageDialog(null, "Ãë¼ÒµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 					}
 				}
 			}
 		});
 		
-		btnExit = new JButton("Ãë¼Ò");
+		btnExit = new JButton("ì·¨ì†Œ");
 		btnExit.setBounds(275, 65, 70, 25);
 		btnExit.setBackground(color);
 		btnExit.setForeground(Color.white);

@@ -7,14 +7,12 @@ import java.util.Vector;
 
 
 public class PlayerDAO {
-	static String driver = "org.mariadb.jdbc.Driver";
-	static String url = "jdbc:mariadb://localhost:3307/stmp";
-	static String dbId = "root";
-	static String dbPw = "1234";
+	static String driver = "org.sqlite.JDBC";
+	static String url = "jdbc:sqlite:stmp.db";
 	
 	Connection conn = null;
 	
-	//µî ¹øÈ£ Áßº¹ Ã¼Å©
+	//ë“± ë²ˆí˜¸ ì¤‘ë³µ ì²´í¬
 	public boolean duplicateCheck(int backNum) {
 		this.dbConn();
 		PreparedStatement pst = null;
@@ -42,7 +40,7 @@ public class PlayerDAO {
 		return result;
 	}
 	
-	//¼±¼ö Ãß°¡
+	//ì„ ìˆ˜ ì¶”ê°€
 	public boolean addPlayer(PlayerDTO playerDTO) {
 		this.dbConn();
 		boolean result = true;
@@ -81,7 +79,7 @@ public class PlayerDAO {
 		return result;
 	}
 	
-	//¼±¼ö È®ÀÎ ÈÄ µ¥ÀÌÅÍ ÃßÃâ (µî¹øÈ£·Î Ã£±â)
+	//ì„ ìˆ˜ í™•ì¸ í›„ ë°ì´í„° ì¶”ì¶œ (ë“±ë²ˆí˜¸ë¡œ ì°¾ê¸°)
 	public PlayerDTO confirmPlayer(int backNum) {
 		this.dbConn();
 		List<PlayerDTO> list = new ArrayList<PlayerDTO>();
@@ -255,7 +253,7 @@ public class PlayerDAO {
 	private void dbConn() {
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(url, dbId, dbPw);
+			conn = DriverManager.getConnection(url);
 		} catch (Exception e) {
 		}
 	}

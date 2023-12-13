@@ -4,6 +4,7 @@ import com.java.login.LoginFrame;
 import com.java.pm.PMFrame;
 import com.java.tm.TMFrame;
 import com.java.user.UserFrame;
+import com.java.utils.ImageLoader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,17 +19,17 @@ public class MainFrame extends JFrame {
 	private JTextArea taManagerInfo;
 	private JTextArea taPOTS;
 	
-	private String strManagerInfo = "ÀÌ¸§ | Carlo Ancelotti\n"
-            					  + "Ãâ»ı | 1959/06/10, ÀÌÅ»¸®¾Æ\n"
-            					  + "½ÅÃ¼ | 179cm, 74kg\n"
-            					  + "°æ·Â | 99.02~01.06 À¯º¥Åõ½º\n"
-            				+ "         | 01.11~09.05 AC ¹Ğ¶õ\n"
-            				+ "         | 09.07~11.05 Ã¿½Ã\n"
-            			    + "         | 11.12~13.06 ÆÄ¸® »ıÁ¦¸£¸Í\n"
-            			    + "         | 13.06~15.05 ·¹¾Ë ¸¶µå¸®µå\n"
-            			    + "         | 16.07~17.09 ¹ÙÀÌ¿¡¸¥ ¹ÀÇî\n"
-            			    + "         | 18.07~19.12 SSC ³ªÆú¸®\n"
-            			    + "         | 19.12~            ¿¡¹öÅÏFC";
+	private String strManagerInfo = "ì´ë¦„ | Carlo Ancelotti\n"
+            					  + "ì¶œìƒ | 1959/06/10, ì´íƒˆë¦¬ì•„\n"
+            					  + "ì‹ ì²´ | 179cm, 74kg\n"
+            					  + "ê²½ë ¥ | 99.02~01.06 ìœ ë²¤íˆ¬ìŠ¤\n"
+            				+ "         | 01.11~09.05 AC ë°€ë€\n"
+            				+ "         | 09.07~11.05 ì²¼ì‹œ\n"
+            			    + "         | 11.12~13.06 íŒŒë¦¬ ìƒì œë¥´ë§¹\n"
+            			    + "         | 13.06~15.05 ë ˆì•Œ ë§ˆë“œë¦¬ë“œ\n"
+            			    + "         | 16.07~17.09 ë°”ì´ì—ë¥¸ ë®Œí—¨\n"
+            			    + "         | 18.07~19.12 SSC ë‚˜í´ë¦¬\n"
+            			    + "         | 19.12~            ì—ë²„í„´FC";
 	private String strPOTS = "2006 | Mikel Arteta\n"
 		   	   			   + "2007 | Mikel Artete\n"
 		   	   			   + "2008 | Jolen Lescott\n"
@@ -61,10 +62,12 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 	}
 	public void mainPanel(JPanel panel) {
+		ImageLoader imageLoader = new ImageLoader();
+
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
-		
-		ImageIcon iconEvertonLogo = new ImageIcon("Images/everton_logo.png");
+
+		ImageIcon iconEvertonLogo = new ImageIcon(imageLoader.getImage("images/everton_logo.png"));
 		JLabel label_logo = new JLabel(iconEvertonLogo);
 		label_logo.setBounds(68, 30, 250, 250);
 		panel.add(label_logo);
@@ -74,7 +77,7 @@ public class MainFrame extends JFrame {
 		labelManagerInfo.setForeground(color);
 		panel.add(labelManagerInfo);
 		
-		ImageIcon iconManagerPic = new ImageIcon("Images/Carlo_Ancelotti.jpg");
+		ImageIcon iconManagerPic = new ImageIcon(imageLoader.getImage("images/Carlo_Ancelotti.jpg"));
 		JLabel labelManagerPic = new JLabel(iconManagerPic);
 		labelManagerPic.setBounds(20, 315, 130, 145);
 		panel.add(labelManagerPic);
@@ -96,7 +99,7 @@ public class MainFrame extends JFrame {
 		taPOTS.setEditable(false);
 		panel.add(taPOTS);
 		
-		btnTM = new JButton("Àü¼ú °ü¸®");
+		btnTM = new JButton("ì „ìˆ  ê´€ë¦¬");
 		btnTM.setBounds(10, 690, 120, 30);
 		btnTM.setBackground(color);
 		btnTM.setForeground(Color.white);
@@ -108,7 +111,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
-		btnPM = new JButton("¼±¼ö °ü¸®");
+		btnPM = new JButton("ì„ ìˆ˜ ê´€ë¦¬");
 		btnPM.setBounds(138, 690, 120, 30);
 		btnPM.setBackground(color);
 		btnPM.setForeground(Color.white);
@@ -120,7 +123,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
-		btnUser = new JButton("³» Á¤º¸");
+		btnUser = new JButton("ë‚´ ì •ë³´");
 		btnUser.setBounds(265, 690, 120, 30);
 		btnUser.setBackground(color);
 		btnUser.setForeground(Color.white);
@@ -132,7 +135,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
-		btnExit = new JButton("³¡³»±â");
+		btnExit = new JButton("ëë‚´ê¸°");
 		btnExit.setBounds(10, 730, 375, 30);
 		btnExit.setBackground(color);
 		btnExit.setForeground(Color.white);

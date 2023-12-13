@@ -11,7 +11,7 @@ public class FindPwFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 
 	public FindPwFrame() {
-		setTitle("ºñ¹Ğ¹øÈ£ Ã£±â");
+		setTitle("ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°");
 		setSize(292, 190);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -36,7 +36,7 @@ public class FindPwFrame extends JFrame {
 		tfUserId.setBounds(70, 10, 100, 25);
 		panel.add(tfUserId);
 		
-		JLabel labelUserPhone = new JLabel("¿¬¶ôÃ³");
+		JLabel labelUserPhone = new JLabel("ì—°ë½ì²˜");
 		labelUserPhone.setBounds(10, 40, 60, 25);
 		panel.add(labelUserPhone);
 		
@@ -44,7 +44,7 @@ public class FindPwFrame extends JFrame {
 		tfUserPhone.setBounds(70, 40, 180, 25);
 		panel.add(tfUserPhone);
 		
-		btnFind = new JButton("ºñ¹Ğ¹øÈ£ Ã£±â");
+		btnFind = new JButton("ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°");
 		btnFind.setBounds(50, 80, 180, 25);
 		btnFind.setBackground(color);
 		btnFind.setForeground(Color.white);
@@ -55,18 +55,18 @@ public class FindPwFrame extends JFrame {
 				UserDAO UserDao = new UserDAO();
 				String pw = UserDao.findUserPw(tfUserId.getText(), tfUserPhone.getText());
 				if(tfUserId.getText().equals("") || tfUserPhone.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "ºñ¹Ğ¹øÈ£ Ã£±â", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°", JOptionPane.ERROR_MESSAGE);
 				} else {
 					if(pw != null) {
 						JOptionPane.showMessageDialog(null,"PW : " + pw);
 					} else {
-						JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏ½Å ³»¿ëÀ¸·Î Á¶È¸µÈ Á¤º¸°¡ ¾ø½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "ºñ¹Ğ¹øÈ£ Ã£±â", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì‹  ë‚´ìš©ìœ¼ë¡œ ì¡°íšŒëœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}
 		});
 		
-		btnCancel = new JButton("Ãë¼Ò");
+		btnCancel = new JButton("ì·¨ì†Œ");
 		btnCancel.setBounds(190, 120, 80, 25);
 		btnCancel.setBackground(color);
 		btnCancel.setForeground(Color.white);

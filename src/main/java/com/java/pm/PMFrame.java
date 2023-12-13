@@ -1,5 +1,7 @@
 package com.java.pm;
 
+import com.java.utils.ImageLoader;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -17,7 +19,7 @@ public class PMFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 	
 	public PMFrame() {
-		setTitle("¼±¼ö °ü¸®");
+		setTitle("ì„ ìˆ˜ ê´€ë¦¬");
 		setSize(810, 505);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -31,20 +33,22 @@ public class PMFrame extends JFrame {
 	}
 	
 	public void PMPanel(JPanel panel) {
+		ImageLoader imageLoader = new ImageLoader();
+
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel label_logo = new JLabel(new ImageIcon("Images/everton_logo_small.png"));
+		JLabel label_logo = new JLabel(new ImageIcon(imageLoader.getImage("images/everton_logo_small.png")));
 		label_logo.setBounds(5, 5, 50, 50);
 		panel.add(label_logo);
 		
-		JLabel labelPanelName = new JLabel("¼± ¼ö °ü ¸®");
-		labelPanelName.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 40));
+		JLabel labelPanelName = new JLabel("ì„  ìˆ˜ ê´€ ë¦¬");
+		labelPanelName.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 40));
 		labelPanelName.setForeground(color);
 		labelPanelName.setBounds(65, 0, 790, 50);
 		panel.add(labelPanelName);
 		
-		btnPlayerAdd = new JButton("¼±¼ö Ãß°¡");
+		btnPlayerAdd = new JButton("ì„ ìˆ˜ ì¶”ê°€");
 		btnPlayerAdd.setBounds(10, 65, 150, 30);
 		btnPlayerAdd.setBackground(color);
 		btnPlayerAdd.setForeground(Color.white);
@@ -56,7 +60,7 @@ public class PMFrame extends JFrame {
 			}
 		});
 		
-		btnPlayerMod = new JButton("¼±¼ö ¼öÁ¤");
+		btnPlayerMod = new JButton("ì„ ìˆ˜ ìˆ˜ì •");
 		btnPlayerMod.setBounds(170, 65, 150, 30);
 		btnPlayerMod.setBackground(color);
 		btnPlayerMod.setForeground(Color.white);
@@ -68,7 +72,7 @@ public class PMFrame extends JFrame {
 			}
 		});
 		
-		btnPlayerDel = new JButton("¼±¼ö »èÁ¦");
+		btnPlayerDel = new JButton("ì„ ìˆ˜ ì‚­ì œ");
 		btnPlayerDel.setBounds(330, 65, 150, 30);
 		btnPlayerDel.setBackground(color);
 		btnPlayerDel.setForeground(Color.white);
@@ -80,7 +84,7 @@ public class PMFrame extends JFrame {
 			}
 		});
 		
-		btnRefresh = new JButton(new ImageIcon("Images/refresh.png"));
+		btnRefresh = new JButton(new ImageIcon(imageLoader.getImage("images/refresh.png")));
 		btnRefresh.setBounds(490, 65, 30, 30);
 		panel.add(btnRefresh);
 		btnRefresh.addActionListener(new ActionListener() {
@@ -114,7 +118,7 @@ public class PMFrame extends JFrame {
 		jTableSet();
 		panel.add(scrollPane);
 		
-		btnExit = new JButton("µ¹¾Æ°¡±â");
+		btnExit = new JButton("ëŒì•„ê°€ê¸°");
 		btnExit.setBounds(630, 430, 150, 30);
 		btnExit.setBackground(color);
 		btnExit.setForeground(Color.white);
@@ -128,14 +132,14 @@ public class PMFrame extends JFrame {
 	}
 	public Vector getColumn() {
 		Vector col = new Vector();
-		col.add("µî ¹øÈ£");
-		col.add("Æ÷Áö¼Ç");
-		col.add("ÀÌ¸§");
-		col.add("»ı³â¿ùÀÏ");
-		col.add("±¹Àû");
-		col.add("Å°");
-		col.add("¸ö¹«°Ô");
-		col.add("ÄÚ¸àÆ®");
+		col.add("ë“± ë²ˆí˜¸");
+		col.add("í¬ì§€ì…˜");
+		col.add("ì´ë¦„");
+		col.add("ìƒë…„ì›”ì¼");
+		col.add("êµ­ì ");
+		col.add("í‚¤");
+		col.add("ëª¸ë¬´ê²Œ");
+		col.add("ì½”ë©˜íŠ¸");
 		
 		return col;
 	}

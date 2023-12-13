@@ -1,5 +1,7 @@
 package com.java.pm;
 
+import com.java.utils.ImageLoader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,7 +16,7 @@ public class PDelFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 	
 	public PDelFrame() {
-		setTitle("¼±¼ö »èÁ¦");
+		setTitle("ì„ ìˆ˜ ì‚­ì œ");
 		setSize(305, 212);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -28,24 +30,26 @@ public class PDelFrame extends JFrame {
 	}
 	
 	public void PAddPanel(JPanel panel) {
+		ImageLoader imageLoader = new ImageLoader();
+
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel label_logo = new JLabel(new ImageIcon("Images/everton_logo_small.png"));
+		JLabel label_logo = new JLabel(new ImageIcon(imageLoader.getImage("images/everton_logo_small.png")));
 		label_logo.setBounds(5, 5, 50, 50);
 		panel.add(label_logo);
 		
-		JLabel labelPanelName = new JLabel("¼± ¼ö »è Á¦");
-		labelPanelName.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		JLabel labelPanelName = new JLabel("ì„  ìˆ˜ ì‚­ ì œ");
+		labelPanelName.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 		labelPanelName.setForeground(color);
 		labelPanelName.setBounds(65, 0, 790, 50);
 		panel.add(labelPanelName);
 		
-		JLabel labelExplain = new JLabel("»èÁ¦ÇÒ ¼±¼öÀÇ µî ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		JLabel labelExplain = new JLabel("ì‚­ì œí•  ì„ ìˆ˜ì˜ ë“± ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		labelExplain.setBounds(10, 65, 280, 25);
 		panel.add(labelExplain);
 		
-		JLabel labelName = new JLabel("µî ¹øÈ£");
+		JLabel labelName = new JLabel("ë“± ë²ˆí˜¸");
 		labelName.setBounds(10, 95, 50, 25);
 		panel.add(labelName);
 		
@@ -53,7 +57,7 @@ public class PDelFrame extends JFrame {
 		tfBackNum.setBounds(70, 95, 50, 25);
 		panel.add(tfBackNum);
 		
-		btnDel = new JButton("¼±¼ö »èÁ¦");
+		btnDel = new JButton("ì„ ìˆ˜ ì‚­ì œ");
 		btnDel.setBounds(70, 135, 100, 30);
 		btnDel.setBackground(color);
 		btnDel.setForeground(Color.white);
@@ -63,19 +67,19 @@ public class PDelFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				PlayerDAO playerDAO = new PlayerDAO();
 				if(tfBackNum.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "µî ¹øÈ£ ÀÔ·ÂÇØÁÖ¼¼¿ä.", "¼±¼ö »èÁ¦", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ë“± ë²ˆí˜¸ ì…ë ¥í•´ì£¼ì„¸ìš”.", "ì„ ìˆ˜ ì‚­ì œ", JOptionPane.ERROR_MESSAGE);
 				} else {
-					int result = JOptionPane.showConfirmDialog(null, "»èÁ¦ÇÏ½Ã°Ú½À´Ï±î?", "¼±¼ö »èÁ¦", JOptionPane.OK_CANCEL_OPTION);
+					int result = JOptionPane.showConfirmDialog(null, "ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì„ ìˆ˜ ì‚­ì œ", JOptionPane.OK_CANCEL_OPTION);
 					if(result == 0) {
 						if(playerDAO.duplicateCheck(Integer.parseInt(tfBackNum.getText()))) {
 							if(playerDAO.deletePlayer(Integer.parseInt(tfBackNum.getText()))) {
-								JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+								JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 								dispose();
 							} else {
-								JOptionPane.showMessageDialog(null, "»èÁ¦ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "¼±¼ö »èÁ¦", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "ì‚­ì œ ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì„ ìˆ˜ ì‚­ì œ", JOptionPane.ERROR_MESSAGE);
 							}
 						} else {
-							JOptionPane.showMessageDialog(null, "ÇØ´ç µî ¹øÈ£ÀÇ ¼±¼ö´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.", "¼±¼ö »èÁ¦", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null, "í•´ë‹¹ ë“± ë²ˆí˜¸ì˜ ì„ ìˆ˜ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.", "ì„ ìˆ˜ ì‚­ì œ", JOptionPane.ERROR_MESSAGE);
 							tfBackNum.setText("");
 						}
 					} else {
@@ -85,7 +89,7 @@ public class PDelFrame extends JFrame {
 			}
 		});
 		
-		btnCancel = new JButton("Ãë¼Ò");
+		btnCancel = new JButton("ì·¨ì†Œ");
 		btnCancel.setBounds(180, 135, 100, 30);
 		btnCancel.setBackground(color);
 		btnCancel.setForeground(Color.white);

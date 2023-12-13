@@ -12,7 +12,7 @@ public class FindIdFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 
 	public FindIdFrame() {
-		setTitle("¾ÆÀÌµğ Ã£±â");
+		setTitle("ì•„ì´ë”” ì°¾ê¸°");
 		setSize(292, 190);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -29,7 +29,7 @@ public class FindIdFrame extends JFrame {
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel labelUserName = new JLabel("ÀÌ¸§");
+		JLabel labelUserName = new JLabel("ì´ë¦„");
 		labelUserName.setBounds(10, 10, 40, 25);
 		panel.add(labelUserName);
 		
@@ -37,7 +37,7 @@ public class FindIdFrame extends JFrame {
 		tfUserName.setBounds(70, 10, 100, 25);
 		panel.add(tfUserName);
 		
-		JLabel labelUserBirth = new JLabel("»ı³â¿ùÀÏ");
+		JLabel labelUserBirth = new JLabel("ìƒë…„ì›”ì¼");
 		labelUserBirth.setBounds(10, 40, 60, 25);
 		panel.add(labelUserBirth);
 		
@@ -45,7 +45,7 @@ public class FindIdFrame extends JFrame {
 		tfUserBirth.setBounds(70, 40, 180, 25);
 		panel.add(tfUserBirth);
 		
-		btnFind = new JButton("¾ÆÀÌµğ Ã£±â");
+		btnFind = new JButton("ì•„ì´ë”” ì°¾ê¸°");
 		btnFind.setBounds(50, 80, 180, 25);
 		btnFind.setBackground(color);
 		btnFind.setForeground(Color.white);
@@ -56,18 +56,18 @@ public class FindIdFrame extends JFrame {
 				UserDAO UserDao = new UserDAO();
 				String id = UserDao.findUserId(tfUserName.getText(), tfUserBirth.getText());
 				if(tfUserBirth.getText().equals("") || tfUserName.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "¾ÆÀÌµğ Ã£±â", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ì•„ì´ë”” ì°¾ê¸°", JOptionPane.ERROR_MESSAGE);
 				} else {
 					if(id != null) {
 						JOptionPane.showMessageDialog(null,"ID : " + id);
 					} else {
-						JOptionPane.showMessageDialog(null, "ÇØ´ç Á¤º¸·Î °¡ÀÔµÈ ¾ÆÀÌµğ°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.", "¾ÆÀÌµğ Ã£±â", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "í•´ë‹¹ ì •ë³´ë¡œ ê°€ì…ëœ ì•„ì´ë””ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.", "ì•„ì´ë”” ì°¾ê¸°", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}
 		});
 		
-		btnCancel = new JButton("Ãë¼Ò");
+		btnCancel = new JButton("ì·¨ì†Œ");
 		btnCancel.setBounds(190, 120, 80, 25);
 		btnCancel.setBackground(color);
 		btnCancel.setForeground(Color.white);

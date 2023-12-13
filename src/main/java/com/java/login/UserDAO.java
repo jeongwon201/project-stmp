@@ -5,20 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
-	static String driver = "org.mariadb.jdbc.Driver";
-	static String url = "jdbc:mariadb://localhost:3307/stmp";
-	static String dbId = "root";
-	static String dbPw = "1234";
-	
+	static String driver = "org.sqlite.JDBC";
+	static String url = "jdbc:sqlite:stmp.db";
+
 	Connection conn = null;
-	
-	//Áßº¹ Ã¼Å©
+
+	//ì¤‘ë³µ ì²´í¬
 	public boolean duplicateCheck(String id) {
 		this.dbConn();
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		boolean result = false;
-		
+
 		try {
 			String sql = "select count(*) cnt from user where id = ?";
 			pst = conn.prepareStatement(sql);
@@ -29,7 +27,7 @@ public class UserDAO {
 				if(cnt > 0) result = true;
 				else result = false;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -39,8 +37,8 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
-	//È¸¿ø °¡ÀÔ
+
+	//íšŒì› ê°€ì…
 	public boolean register(UserDTO user) {
 		this.dbConn();
 		boolean result = true;
@@ -55,7 +53,7 @@ public class UserDAO {
 			pst.setString(4, user.getBirth());
 			pst.setString(5, user.getPhone());
 			pst.setString(6, user.getEmail());
-			
+
 			if(1 == pst.executeUpdate()) {
 				result = true;
 			} else {
@@ -65,7 +63,7 @@ public class UserDAO {
 		} catch (Exception e) {
 			try {
 				conn.rollback();
-				
+
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
@@ -76,8 +74,8 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
-	//ID Ã£±â
+
+	//ID ì°¾ê¸°
 	public String findUserId(String name, String birth) {
 		this.dbConn();
 		PreparedStatement pst = null;
@@ -103,8 +101,8 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
-	//PW Ã£±â
+
+	//PW ì°¾ê¸°
 	public String findUserPw(String id, String phone) {
 		this.dbConn();
 		PreparedStatement pst = null;
@@ -130,8 +128,8 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
-	//·Î±×ÀÎ
+
+	//ë¡œê·¸ì¸
 	public String login(String id, String pw) {
 		this.dbConn();
 		PreparedStatement pst = null;
@@ -157,8 +155,8 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
-	//¾ÆÀÌµğ È®ÀÎ
+
+	//ì•„ì´ë”” í™•ì¸
 	public UserDTO confirmUser(String id) {
 		this.dbConn();
 		List<UserDTO> dtos = new ArrayList<UserDTO>();
@@ -175,7 +173,7 @@ public class UserDAO {
 				String birth = rs.getString("birth");
 				String phone = rs.getString("phone");
 				String email = rs.getString("email");
-				
+
 				UserDTO dto = new UserDTO(id, pw, name, birth, phone,email);
 				dtos.add(dto);
 			}
@@ -188,8 +186,8 @@ public class UserDAO {
 		}
 		return dtos.get(0);
 	}
-	
-	//Á¤º¸ ¼öÁ¤
+
+	//ì •ë³´ ìˆ˜ì •
 	public boolean modifyUser(UserDTO userDTO) {
 		this.dbConn();
 		boolean result = true;
@@ -219,8 +217,8 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
-	//È¸¿ø Å»Åğ
+
+	//íšŒì› íƒˆí‡´
 	public boolean deleteUser(String id) {
 		this.dbConn();
 		boolean result = true;
@@ -245,16 +243,16 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
+
 	private void dbConn() {
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(url, dbId, dbPw);
+			conn = DriverManager.getConnection(url);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void closeRs(ResultSet rs) {
 		try {
 			if(rs != null) rs.close();

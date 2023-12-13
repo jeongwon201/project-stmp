@@ -1,9 +1,9 @@
 # project-stmp | 축구 전술 관리 프로그램
 > 나만의 축구 전술을 생성하고 관리하는 자바 프로그램
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+<img src="https://img.shields.io/badge/stmp-1.0 ver-blue"/>
+<img alt="GitHub License" src="https://img.shields.io/github/license/jeongwon201/project-stmp">
+
 
 <div align="center">
     <image src="readme/images/main.png" style="float: left; width: 150px; height: 350px;"/>
@@ -25,9 +25,24 @@
 ### 설치
 
 윈도우:
-
+1. Git Repository 를 Clone 합니다.
 ```sh
-edit autoexec.bat
+git clone https://github.com/jeongwon201/project-stmp.git
+```
+
+2. 현재 Directory 를 변경합니다.
+```sh
+cd stmp
+```
+
+3. 빌드 명령을 실행하세요.
+```sh
+mvn package
+```
+
+4. JAR 파일을 실행합니다.
+```sh
+java -jar stmp-{version}-jar-with-dependencies.jar
 ```
 
 ### 사용 예제
@@ -96,17 +111,12 @@ _더 많은 예제와 사용법은 다음 링크를 참고하세요._
 - <a href="https://github.com/jeongwon201/project-stmp/blob/main/readme/tm.md" target="_blank"> 전술 관리</a>
 - <a href="https://github.com/jeongwon201/project-stmp/blob/main/readme/myinfo.md" target="_blank"> 내 정보</a>
 
-## 개발 환경 설정
-
-모든 개발 의존성 설치 방법과 자동 테스트 슈트 실행 방법을 운영체제 별로 작성합니다.
-
-```sh
-make install
-npm test
-```
-
 ## 업데이트 내역
 
+* 1.1.0
+  * MariaDB to SQLite
+  * 내부 파일 구조 변경
+  * ImageLoader 추가
 * 1.0.0
     * 첫 출시
 * 0.0.1

@@ -1,5 +1,7 @@
 package com.java.pm;
 
+import com.java.utils.ImageLoader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +17,7 @@ public class PAddFrame extends JFrame {
 	Color color = new Color(39, 68, 136);
 	
 	public PAddFrame() {
-		setTitle("¼±¼ö Ãß°¡");
+		setTitle("ì„ ìˆ˜ ì¶”ê°€");
 		setSize(310, 422);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -29,20 +31,22 @@ public class PAddFrame extends JFrame {
 	}
 	
 	public void PAddPanel(JPanel panel) {
+		ImageLoader imageLoader = new ImageLoader();
+
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel label_logo = new JLabel(new ImageIcon("Images/everton_logo_small.png"));
+		JLabel label_logo = new JLabel(new ImageIcon(imageLoader.getImage("images/everton_logo_small.png")));
 		label_logo.setBounds(5, 5, 50, 50);
 		panel.add(label_logo);
 		
-		JLabel labelPanelName = new JLabel("¼± ¼ö Ãß °¡");
-		labelPanelName.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		JLabel labelPanelName = new JLabel("ì„  ìˆ˜ ì¶” ê°€");
+		labelPanelName.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 		labelPanelName.setForeground(color);
 		labelPanelName.setBounds(65, 0, 790, 50);
 		panel.add(labelPanelName);
 		
-		JLabel labelBackNum = new JLabel("µî ¹øÈ£");
+		JLabel labelBackNum = new JLabel("ë“± ë²ˆí˜¸");
 		labelBackNum.setBounds(10, 65, 50, 25);
 		panel.add(labelBackNum);
 		
@@ -50,7 +54,7 @@ public class PAddFrame extends JFrame {
 		tfBackNum.setBounds(70, 65, 50, 25);
 		panel.add(tfBackNum);
 		
-		btnDuplicateCheck = new JButton("Áßº¹ È®ÀÎ");
+		btnDuplicateCheck = new JButton("ì¤‘ë³µ í™•ì¸");
 		btnDuplicateCheck.setBounds(140, 65, 90, 25);
 		btnDuplicateCheck.setBackground(color);
 		btnDuplicateCheck.setForeground(Color.white);
@@ -60,9 +64,9 @@ public class PAddFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				PlayerDAO playerDAO = new PlayerDAO();
 				if(playerDAO.duplicateCheck(Integer.parseInt(tfBackNum.getText()))) {
-					JOptionPane.showMessageDialog(null, "»ç¿ëÁßÀÎ µî ¹øÈ£ÀÔ´Ï´Ù.", "Áßº¹", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì‚¬ìš©ì¤‘ì¸ ë“± ë²ˆí˜¸ì…ë‹ˆë‹¤.", "ì¤‘ë³µ", JOptionPane.ERROR_MESSAGE);
 				} else {
-					JOptionPane.showMessageDialog(null, "»ç¿ë °¡´ÉÇÑ µî ¹øÈ£ÀÔ´Ï´Ù.");
+					JOptionPane.showMessageDialog(null, "ì‚¬ìš© ê°€ëŠ¥í•œ ë“± ë²ˆí˜¸ì…ë‹ˆë‹¤.");
 					tfBackNum.setEnabled(false);
 					btnDuplicateCheck.setEnabled(false);
 					btnAdd.setEnabled(true);
@@ -70,7 +74,7 @@ public class PAddFrame extends JFrame {
 			}
 		});
 		
-		JLabel labelPos = new JLabel("¼±È£ Æ÷Áö¼Ç");
+		JLabel labelPos = new JLabel("ì„ í˜¸ í¬ì§€ì…˜");
 		labelPos.setBounds(10, 95, 70, 25);
 		panel.add(labelPos);
 		
@@ -86,7 +90,7 @@ public class PAddFrame extends JFrame {
 		rdoGroup.add(FW); rdoGroup.add(MF); rdoGroup.add(DF); rdoGroup.add(GK);
 		panel.add(FW); panel.add(MF); panel.add(DF); panel.add(GK);
 		
-		JLabel labelName = new JLabel("ÀÌ¸§");
+		JLabel labelName = new JLabel("ì´ë¦„");
 		labelName.setBounds(10, 125, 30, 25);
 		panel.add(labelName);
 		
@@ -94,7 +98,7 @@ public class PAddFrame extends JFrame {
 		tfName.setBounds(50, 125, 180, 25);
 		panel.add(tfName);
 		
-		JLabel labelBirth = new JLabel("»ı³â¿ùÀÏ");
+		JLabel labelBirth = new JLabel("ìƒë…„ì›”ì¼");
 		labelBirth.setBounds(10, 155, 60, 25);
 		panel.add(labelBirth);
 		
@@ -106,7 +110,7 @@ public class PAddFrame extends JFrame {
 		labelBirthEx.setBounds(190, 155, 100, 25);
 		panel.add(labelBirthEx);
 		
-		JLabel labelNationality = new JLabel("±¹Àû");
+		JLabel labelNationality = new JLabel("êµ­ì ");
 		labelNationality.setBounds(10, 185, 30, 25);
 		panel.add(labelNationality);
 		
@@ -114,7 +118,7 @@ public class PAddFrame extends JFrame {
 		tfNationality.setBounds(50, 185, 100, 25);
 		panel.add(tfNationality);
 		
-		JLabel labelHeight = new JLabel("Å°");
+		JLabel labelHeight = new JLabel("í‚¤");
 		labelHeight.setBounds(10, 215, 20, 25);
 		panel.add(labelHeight);
 		
@@ -122,7 +126,7 @@ public class PAddFrame extends JFrame {
 		tfHeight.setBounds(40, 215, 60, 25);
 		panel.add(tfHeight);
 		
-		JLabel labelWeight = new JLabel("¸ö¹«°Ô");
+		JLabel labelWeight = new JLabel("ëª¸ë¬´ê²Œ");
 		labelWeight.setBounds(10, 245, 50, 25);
 		panel.add(labelWeight);
 		
@@ -130,7 +134,7 @@ public class PAddFrame extends JFrame {
 		tfWeight.setBounds(70, 245, 60, 25);
 		panel.add(tfWeight);
 		
-		JLabel labelComment = new JLabel("ÄÚ¸àÆ®");
+		JLabel labelComment = new JLabel("ì½”ë©˜íŠ¸");
 		labelComment.setBounds(10, 275, 50, 25);
 		panel.add(labelComment);
 		
@@ -138,7 +142,7 @@ public class PAddFrame extends JFrame {
 		tfComment.setBounds(10, 300, 275, 25);
 		panel.add(tfComment);
 		
-		btnAdd = new JButton("¼±¼ö Ãß°¡");
+		btnAdd = new JButton("ì„ ìˆ˜ ì¶”ê°€");
 		btnAdd.setBounds(70, 345, 100, 30);
 		btnAdd.setBackground(color);
 		btnAdd.setForeground(Color.white);
@@ -162,20 +166,20 @@ public class PAddFrame extends JFrame {
 				
 				if(tfName.getText().equals("") || tfBirth.getText().equals("") || tfNationality.getText().equals("")
 					|| tfHeight.getText().equals("") || tfWeight.equals("") || tfComment.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				} else {
 					if(playerDAO.addPlayer(playerDTO)) {
-						JOptionPane.showMessageDialog(null, "¼±¼ö Ãß°¡°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "ì„ ìˆ˜ ì¶”ê°€ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "¼±¼ö Ãß°¡ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ì„ ìˆ˜ ì¶”ê°€ ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 						dispose();
 					}
 				}
 			}
 		});
 		
-		btnCancel = new JButton("Ãë¼Ò");
+		btnCancel = new JButton("ì·¨ì†Œ");
 		btnCancel.setBounds(180, 345, 100, 30);
 		btnCancel.setBackground(color);
 		btnCancel.setForeground(Color.white);

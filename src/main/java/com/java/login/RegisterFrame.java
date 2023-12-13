@@ -12,7 +12,7 @@ public class RegisterFrame extends JFrame {
 
 	
 	public RegisterFrame() {
-		setTitle("È¸¿ø°¡ÀÔ");
+		setTitle("íšŒì›ê°€ì…");
 		setSize(395, 285);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -29,7 +29,7 @@ public class RegisterFrame extends JFrame {
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel labelUserId = new JLabel("¾ÆÀÌµğ");
+		JLabel labelUserId = new JLabel("ì•„ì´ë””");
 		labelUserId.setBounds(10, 10, 40, 25);
 		panel.add(labelUserId);
 		
@@ -37,7 +37,7 @@ public class RegisterFrame extends JFrame {
 		tfUserId.setBounds(60, 10, 200, 25);
 		panel.add(tfUserId);
 		
-		btnDuplicateCheck = new JButton("Áßº¹ È®ÀÎ");
+		btnDuplicateCheck = new JButton("ì¤‘ë³µ í™•ì¸");
 		btnDuplicateCheck.setBounds(270, 10, 100, 25);
 		btnDuplicateCheck.setBackground(color);
 		btnDuplicateCheck.setForeground(Color.white);
@@ -47,13 +47,13 @@ public class RegisterFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				UserDAO userDao = new UserDAO();
 				if(userDao.duplicateCheck(tfUserId.getText())) {
-					JOptionPane.showMessageDialog(null, "ÀÌ¹Ì Á¸ÀçÇÏ´Â ¾ÆÀÌµğÀÔ´Ï´Ù.", "Áßº¹", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.", "ì¤‘ë³µ", JOptionPane.ERROR_MESSAGE);
 					btnRegister.setEnabled(false);
 				} else if(tfUserId.getText().equals("")){
-					JOptionPane.showMessageDialog(null, "¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.", "Áßº¹", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì•„ì´ë””ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.", "ì¤‘ë³µ", JOptionPane.ERROR_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğÀÔ´Ï´Ù.");
+					JOptionPane.showMessageDialog(null, "ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë””ì…ë‹ˆë‹¤.");
 					tfUserId.setEnabled(false);
 					btnDuplicateCheck.setEnabled(false);
 					btnRegister.setEnabled(true);
@@ -61,7 +61,7 @@ public class RegisterFrame extends JFrame {
 			}
 		});
 		
-		JLabel labelUserPw = new JLabel("ºñ¹Ğ¹øÈ£");
+		JLabel labelUserPw = new JLabel("ë¹„ë°€ë²ˆí˜¸");
 		labelUserPw.setBounds(10, 40, 60, 25);
 		panel.add(labelUserPw);
 		
@@ -69,7 +69,7 @@ public class RegisterFrame extends JFrame {
 		tfUserPw.setBounds(70, 40, 200, 25);
 		panel.add(tfUserPw);
 		
-		JLabel labelUserName = new JLabel("ÀÌ¸§");
+		JLabel labelUserName = new JLabel("ì´ë¦„");
 		labelUserName.setBounds(10, 70, 30, 25);
 		panel.add(labelUserName);
 		
@@ -77,7 +77,7 @@ public class RegisterFrame extends JFrame {
 		tfUserName.setBounds(45, 70, 100, 25);
 		panel.add(tfUserName);
 		
-		JLabel labelUserBirth = new JLabel("»ı³â¿ùÀÏ");
+		JLabel labelUserBirth = new JLabel("ìƒë…„ì›”ì¼");
 		labelUserBirth.setBounds(10, 100, 60, 25);
 		panel.add(labelUserBirth);
 		
@@ -85,7 +85,7 @@ public class RegisterFrame extends JFrame {
 		tfUserBirth.setBounds(70, 100, 200, 25);
 		panel.add(tfUserBirth);
 		
-		JLabel labelUserEmail = new JLabel("ÀÌ¸ŞÀÏ");
+		JLabel labelUserEmail = new JLabel("ì´ë©”ì¼");
 		labelUserEmail.setBounds(10, 130, 40, 25);
 		panel.add(labelUserEmail);
 		
@@ -93,7 +93,7 @@ public class RegisterFrame extends JFrame {
 		tfUserEmail.setBounds(60, 130, 300, 25);
 		panel.add(tfUserEmail);
 		
-		JLabel labelUserPhone = new JLabel("¿¬¶ôÃ³");
+		JLabel labelUserPhone = new JLabel("ì—°ë½ì²˜");
 		labelUserPhone.setBounds(10, 160, 50, 25);
 		panel.add(labelUserPhone);
 		
@@ -101,7 +101,7 @@ public class RegisterFrame extends JFrame {
 		tfUserPhone.setBounds(60, 160, 180, 25);
 		panel.add(tfUserPhone);
 		
-		btnCancel = new JButton("Ãë¼Ò");
+		btnCancel = new JButton("ì·¨ì†Œ");
 		btnCancel.setBounds(160, 210, 100, 25);
 		btnCancel.setBackground(color);
 		btnCancel.setForeground(Color.white);
@@ -113,7 +113,7 @@ public class RegisterFrame extends JFrame {
 			}
 		});
 		
-		btnRegister = new JButton("°¡ÀÔ");
+		btnRegister = new JButton("ê°€ì…");
 		btnRegister.setBounds(270, 210, 100, 25);
 		btnRegister.setBackground(color);
 		btnRegister.setForeground(Color.white);
@@ -134,13 +134,13 @@ public class RegisterFrame extends JFrame {
 				
 				if(tfUserPw.getText().equals("") || tfUserName.getText().equals("") || tfUserBirth.equals("")
 					      || tfUserPhone.getText().equals("") || tfUserEmail.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				} else {
 					if(userDao.register(userDto)) {
-						JOptionPane.showMessageDialog(null, "È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "íšŒì›ê°€ì…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "È¸¿ø°¡ÀÔ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "íšŒì›ê°€ì… ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 						dispose();
 					}
 				}

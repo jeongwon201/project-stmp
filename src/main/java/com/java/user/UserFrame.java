@@ -15,7 +15,7 @@ public class UserFrame extends JFrame {
 	private JTextField tfId, tfPw, tfName, tfBirth, tfPhone, tfEmail;
 	
 	public UserFrame() {
-		setTitle("³» Á¤º¸");
+		setTitle("ë‚´ ì •ë³´");
 		setSize(295, 325);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -32,11 +32,11 @@ public class UserFrame extends JFrame {
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel labelInfo = new JLabel("[º¸¾È] ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		JLabel labelInfo = new JLabel("[ë³´ì•ˆ] ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		labelInfo.setBounds(10, 15, 275, 25);
 		panel.add(labelInfo);
 		
-		JLabel labelId = new JLabel("¾ÆÀÌµğ");
+		JLabel labelId = new JLabel("ì•„ì´ë””");
 		labelId.setBounds(10, 50, 40, 25);
 		panel.add(labelId);
 		
@@ -44,7 +44,7 @@ public class UserFrame extends JFrame {
 		tfId.setBounds(60, 50, 130, 25);
 		panel.add(tfId);
 		
-		JLabel labelPw = new JLabel("ºñ¹Ğ¹øÈ£");
+		JLabel labelPw = new JLabel("ë¹„ë°€ë²ˆí˜¸");
 		labelPw.setBounds(10, 80, 100, 25);
 		panel.add(labelPw);
 		
@@ -52,7 +52,7 @@ public class UserFrame extends JFrame {
 		tfPw.setBounds(70, 80, 130, 25);
 		panel.add(tfPw);
 		
-		btnConfirm = new JButton("È®ÀÎ");
+		btnConfirm = new JButton("í™•ì¸");
 		btnConfirm.setBounds(210, 80, 60, 25);
 		btnConfirm.setBackground(color);
 		btnConfirm.setForeground(Color.white);
@@ -63,7 +63,7 @@ public class UserFrame extends JFrame {
 				UserDAO userDAO = new UserDAO();
 				String name = userDAO.login(tfId.getText(), tfPw.getText());
 				if(name != null) {
-					JOptionPane.showMessageDialog(null, "È®ÀÎÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù." );
+					JOptionPane.showMessageDialog(null, "í™•ì¸ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤." );
 					UserDTO userDTO = userDAO.confirmUser(tfId.getText());
 					btnConfirm.setEnabled(false);
 					tfId.setEnabled(false); tfId.setText(userDTO.getId());
@@ -75,12 +75,12 @@ public class UserFrame extends JFrame {
 					btnModify.setEnabled(true);
 					btnDelete.setEnabled(true);
 				} else {
-					JOptionPane.showMessageDialog(null, "Á¤º¸°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.", "·Î±×ÀÎ ½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì •ë³´ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.", "ë¡œê·¸ì¸ ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
 		
-		JLabel labelName = new JLabel("ÀÌ¸§");
+		JLabel labelName = new JLabel("ì´ë¦„");
 		labelName.setBounds(10, 110, 50, 25);
 		panel.add(labelName);
 		
@@ -89,7 +89,7 @@ public class UserFrame extends JFrame {
 		tfName.setEnabled(false);
 		panel.add(tfName);
 		
-		JLabel labelBirth = new JLabel("»ı³â¿ùÀÏ");
+		JLabel labelBirth = new JLabel("ìƒë…„ì›”ì¼");
 		labelBirth.setBounds(10, 140, 70, 25);
 		panel.add(labelBirth);
 		
@@ -102,7 +102,7 @@ public class UserFrame extends JFrame {
 		labelBirthEx.setBounds(180, 140, 100, 25);
 		panel.add(labelBirthEx);
 		
-		JLabel labelPhone = new JLabel("¿¬¶ôÃ³");
+		JLabel labelPhone = new JLabel("ì—°ë½ì²˜");
 		labelPhone.setBounds(10, 170, 60, 25);
 		panel.add(labelPhone);
 		
@@ -111,7 +111,7 @@ public class UserFrame extends JFrame {
 		tfPhone.setEnabled(false);
 		panel.add(tfPhone);
 		
-		JLabel labelEmail = new JLabel("ÀÌ¸ŞÀÏ");
+		JLabel labelEmail = new JLabel("ì´ë©”ì¼");
 		labelEmail.setBounds(10, 200, 60, 25);
 		panel.add(labelEmail);
 		
@@ -120,7 +120,7 @@ public class UserFrame extends JFrame {
 		tfEmail.setEnabled(false);
 		panel.add(tfEmail);
 		
-		btnDelete = new JButton("Å»Åğ");
+		btnDelete = new JButton("íƒˆí‡´");
 		btnDelete.setBounds(10, 250, 80, 30);
 		btnDelete.setBackground(color);
 		btnDelete.setForeground(Color.white);
@@ -130,21 +130,21 @@ public class UserFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				UserDAO userDAO = new UserDAO();
-				int result = JOptionPane.showConfirmDialog(null, "Å»ÅğÇÏ½Ã°Ú½À´Ï±î?", "Å»Åğ", JOptionPane.OK_CANCEL_OPTION);
+				int result = JOptionPane.showConfirmDialog(null, "íƒˆí‡´í•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "íƒˆí‡´", JOptionPane.OK_CANCEL_OPTION);
 				if(result == 0) {
 					if(userDAO.deleteUser(tfId.getText())) {
-						JOptionPane.showMessageDialog(null, "Å»Åğ°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù. ´Ù½Ã ½ÃÀÛÇØÁÖ¼¼¿ä.");
+						JOptionPane.showMessageDialog(null, "íƒˆí‡´ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œì‘í•´ì£¼ì„¸ìš”.");
 						System.exit(0);
 					} else {
-						JOptionPane.showMessageDialog(null, "Å»Åğ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "Å»Åğ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "íƒˆí‡´ ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "íƒˆí‡´", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "Ãë¼ÒµÇ¾ú½À´Ï´Ù.");
+					JOptionPane.showMessageDialog(null, "ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 				}
 			}
 		});
 		
-		btnModify = new JButton("¼öÁ¤");
+		btnModify = new JButton("ìˆ˜ì •");
 		btnModify.setBounds(100, 250, 80, 30);
 		btnModify.setBackground(color);
 		btnModify.setForeground(Color.white);
@@ -163,24 +163,24 @@ public class UserFrame extends JFrame {
 				userDTO.setEmail(tfEmail.getText());
 				
 				if (tfName.getText().equals("") || tfBirth.getText().equals("") || tfPhone.getText().equals("") || tfEmail.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ  ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "¼öÁ¤", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„  ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ìˆ˜ì •", JOptionPane.ERROR_MESSAGE);
 				} else {
-					int result = JOptionPane.showConfirmDialog(null, "¼öÁ¤ÇÏ½Ã°Ú½À´Ï±î?", "¼öÁ¤", JOptionPane.OK_CANCEL_OPTION);
+					int result = JOptionPane.showConfirmDialog(null, "ìˆ˜ì •í•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ìˆ˜ì •", JOptionPane.OK_CANCEL_OPTION);
 					if(result == 0) {
 						if(userDAO.modifyUser(userDTO)) {
-							JOptionPane.showMessageDialog(null, "¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+							JOptionPane.showMessageDialog(null, "ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 							dispose();
 						} else {
-							JOptionPane.showMessageDialog(null, "¼öÁ¤ ½ÇÆĞ, ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "¼öÁ¤", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null, "ìˆ˜ì • ì‹¤íŒ¨, ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ìˆ˜ì •", JOptionPane.ERROR_MESSAGE);
 						}
 					} else {
-						JOptionPane.showMessageDialog(null, "Ãë¼ÒµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 					}
 				}
 			}
 		});
 		
-		btnExit = new JButton("³ª°¡±â");
+		btnExit = new JButton("ë‚˜ê°€ê¸°");
 		btnExit.setBounds(190, 250, 80, 30);
 		btnExit.setBackground(color);
 		btnExit.setForeground(Color.white);

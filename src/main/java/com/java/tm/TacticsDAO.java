@@ -4,11 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class TacticsDAO {
-	static String driver = "org.mariadb.jdbc.Driver";
-	static String url = "jdbc:mariadb://localhost:3307/stmp";
-	static String dbId = "root";
-	static String dbPw = "1234";
-	
+	static String driver = "org.sqlite.JDBC";
+	static String url = "jdbc:sqlite:stmp.db";
+
 	Connection conn = null;
 	
 	public ArrayList<String> getPlayerName() {
@@ -16,7 +14,7 @@ public class TacticsDAO {
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		ArrayList<String> name = new ArrayList<String>();
-		name.add("¼±¼ö¸¦ ¼±ÅÃÇÏ¼¼¿ä.");
+		name.add("ì„ ìˆ˜ë¥¼ ì„ íƒí•˜ì„¸ìš”.");
 	    try {
 	      String sql = "select name from player order by backNum asc";
 	      pst = conn.prepareStatement(sql);
@@ -41,12 +39,12 @@ public class TacticsDAO {
 		ResultSet rs = null;
 		ArrayList<String> name = new ArrayList<String>();
 		if(category.equals("del")) {
-			name.add("»èÁ¦ÇÒ Àü¼úÀ» ¼±ÅÃÇÏ¼¼¿ä.");
+			name.add("ì‚­ì œí•  ì „ìˆ ì„ ì„ íƒí•˜ì„¸ìš”.");
 
 		} else if(category.equals("intro")) {
-			name.add("¼Ò°³ÇÒ Àü¼úÀ» ¼±ÅÃÇÏ¼¼¿ä.");
+			name.add("ì†Œê°œí•  ì „ìˆ ì„ ì„ íƒí•˜ì„¸ìš”.");
 		} else if(category.equals("load")) {
-			name.add("ºÒ·¯¿Ã Àü¼úÀ» ¼±ÅÃÇÏ¼¼¿ä.");
+			name.add("ë¶ˆëŸ¬ì˜¬ ì „ìˆ ì„ ì„ íƒí•˜ì„¸ìš”.");
 		} else {
 			name.add("");
 		}
@@ -275,7 +273,7 @@ public class TacticsDAO {
 	private void dbConn() {
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(url, dbId, dbPw);
+			conn = DriverManager.getConnection(url);
 		} catch (Exception e) {
 		}
 	}

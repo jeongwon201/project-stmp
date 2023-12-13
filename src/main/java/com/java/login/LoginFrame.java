@@ -9,48 +9,48 @@ import java.awt.event.ActionListener;
 
 public class LoginFrame extends JFrame {
 	private Login login;
-	
+
 	private JButton btnLogin, btnRegister, btnFindId, btnFindPw, btnExit;
 	private JTextField tfUserId;
 	private JPasswordField tfUserPw;
 	Color color = new Color(39, 68, 136);
-	
+
 	public LoginFrame() {
-		setTitle("·Î±×ÀÎ");
+		setTitle("ë¡œê·¸ì¸");
 		setSize(360, 185);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		JPanel panel = new JPanel();
 		LoginPanel(panel);
-		
+
 		add(panel);
-		
+
 		setVisible(true);
 	}
-	
+
 	public void LoginPanel(JPanel panel) {
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
-		
-		JLabel labelUserId = new JLabel("¾ÆÀÌµğ");
+
+		JLabel labelUserId = new JLabel("ì•„ì´ë””");
 		labelUserId.setBounds(40, 10, 40, 25);
 		labelUserId.setForeground(color);
 		panel.add(labelUserId);
-		
+
 		tfUserId = new JTextField(20);
 		tfUserId.setBounds(90, 10, 200, 25);
 		panel.add(tfUserId);
-		
-		JLabel labelUserPw = new JLabel("ºñ¹Ğ¹øÈ£");
+
+		JLabel labelUserPw = new JLabel("ë¹„ë°€ë²ˆí˜¸");
 		labelUserPw.setBounds(30, 40, 60, 25);
 		panel.add(labelUserPw);
 		labelUserPw.setForeground(color);
 		tfUserPw = new JPasswordField(20);
 		tfUserPw.setBounds(90, 40, 200, 25);
 		panel.add(tfUserPw);
-		
-		btnLogin = new JButton("·Î±×ÀÎ");
+
+		btnLogin = new JButton("ë¡œê·¸ì¸");
 		btnLogin.setBounds(230, 80, 100, 25);
 		btnLogin.setBackground(color);
 		btnLogin.setForeground(Color.white);
@@ -61,21 +61,21 @@ public class LoginFrame extends JFrame {
 				UserDAO userDao = new UserDAO();
 				String name = userDao.login(tfUserId.getText(), tfUserPw.getText());
 				if(tfUserId.getText().equals("") || tfUserPw.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "ÀÔ·ÂÇÏÁö¾ÊÀº Á¤º¸°¡ ÀÖ½À´Ï´Ù, È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.", "·Î±×ÀÎ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì…ë ¥í•˜ì§€ì•Šì€ ì •ë³´ê°€ ìˆìŠµë‹ˆë‹¤, í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.", "ë¡œê·¸ì¸", JOptionPane.ERROR_MESSAGE);
 				} else {
 					if(name != null) {
-						JOptionPane.showMessageDialog(null, name + "´Ô È¯¿µÇÕ´Ï´Ù." );
+						JOptionPane.showMessageDialog(null, name + "ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤." );
 						MainFrame mainFrame = new MainFrame();
 						dispose();
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "°¡ÀÔÇÏÁö ¾ÊÀº ¾ÆÀÌµğÀÌ°Å³ª, Àß¸øµÈ ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù.", "·Î±×ÀÎ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ê°€ì…í•˜ì§€ ì•Šì€ ì•„ì´ë””ì´ê±°ë‚˜, ì˜ëª»ëœ ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤.", "ë¡œê·¸ì¸", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}
 		});
-		
-		btnRegister = new JButton("È¸¿ø °¡ÀÔ");
+
+		btnRegister = new JButton("íšŒì› ê°€ì…");
 		btnRegister.setBounds(10, 80, 100, 25);
 		btnRegister.setBackground(color);
 		btnRegister.setForeground(Color.white);
@@ -86,8 +86,8 @@ public class LoginFrame extends JFrame {
 				RegisterFrame registerFrame = new RegisterFrame();
 			}
 		});
-		
-		btnFindId = new JButton("ID Ã£±â");
+
+		btnFindId = new JButton("ID ì°¾ê¸°");
 		btnFindId.setBounds(120, 80, 100, 25);
 		btnFindId.setBackground(color);
 		btnFindId.setForeground(Color.white);
@@ -98,7 +98,7 @@ public class LoginFrame extends JFrame {
 				FindIdFrame findIdFrame = new FindIdFrame();
 			}
 		});
-		btnFindPw = new JButton("PW Ã£±â");
+		btnFindPw = new JButton("PW ì°¾ê¸°");
 		btnFindPw.setBounds(120, 110, 100, 25);
 		btnFindPw.setBackground(color);
 		btnFindPw.setForeground(Color.white);
@@ -109,8 +109,8 @@ public class LoginFrame extends JFrame {
 				FindPwFrame findPwFrame = new FindPwFrame();
 			}
 		});
-		
-		btnExit = new JButton("³¡³»±â");
+
+		btnExit = new JButton("ëë‚´ê¸°");
 		btnExit.setBounds(230, 110, 100, 25);
 		btnExit.setBackground(color);
 		btnExit.setForeground(Color.white);

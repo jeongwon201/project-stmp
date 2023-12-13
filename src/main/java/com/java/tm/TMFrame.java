@@ -1,5 +1,7 @@
 package com.java.tm;
 
+import com.java.utils.ImageLoader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -44,7 +46,7 @@ public class TMFrame extends JFrame {
 	
 	Color color = new Color(39, 68, 136);
 	public TMFrame() {
-		setTitle("Àü¼ú °ü¸®");
+		setTitle("ì „ìˆ  ê´€ë¦¬");
 		setSize(1005, 632);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -58,15 +60,17 @@ public class TMFrame extends JFrame {
 	}
 	
 	public void tmPanel(JPanel panel) {
+		ImageLoader imageLoader = new ImageLoader();
+
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		JLabel label_logo = new JLabel(new ImageIcon("Images/everton_logo_small.png"));
+		JLabel label_logo = new JLabel(new ImageIcon(imageLoader.getImage("images/everton_logo_small.png")));
 		label_logo.setBounds(5, 5, 50, 50);
 		panel.add(label_logo);
 		
-		JLabel labelPanelName = new JLabel("Àü ¼ú °ü ¸®");
-		labelPanelName.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		JLabel labelPanelName = new JLabel("ì „ ìˆ  ê´€ ë¦¬");
+		labelPanelName.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 		labelPanelName.setForeground(color);
 		labelPanelName.setBounds(65, 0, 200, 50);
 		panel.add(labelPanelName);
@@ -78,7 +82,7 @@ public class TMFrame extends JFrame {
 		panel.add(cbTactics);
 		
 		
-		btnLoadTactics = new JButton("Àü¼ú ºÒ·¯¿À±â");
+		btnLoadTactics = new JButton("ì „ìˆ  ë¶ˆëŸ¬ì˜¤ê¸°");
 		btnLoadTactics.setBounds(455, 15, 140, 25);
 		btnLoadTactics.setBackground(color);
 		btnLoadTactics.setForeground(Color.white);
@@ -113,7 +117,7 @@ public class TMFrame extends JFrame {
 		labelContour.setBackground(color);
 		panel.add(labelContour);
 		
-		JLabel labelTacticsName = new JLabel("Àü¼ú ÀÌ¸§");
+		JLabel labelTacticsName = new JLabel("ì „ìˆ  ì´ë¦„");
 		labelTacticsName.setBounds(20, 80, 60, 25);
 		panel.add(labelTacticsName);
 		
@@ -121,7 +125,7 @@ public class TMFrame extends JFrame {
 		tfTacticsName.setBounds(90, 80, 160, 25);
 		panel.add(tfTacticsName);
 		
-		btnDupCheck = new JButton("Áßº¹");
+		btnDupCheck = new JButton("ì¤‘ë³µ");
 		btnDupCheck.setBounds(255, 80, 60, 25);
 		btnDupCheck.setBackground(color);
 		btnDupCheck.setForeground(Color.white);
@@ -130,11 +134,11 @@ public class TMFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(tacticsDAO.duplicateCheck(tfTacticsName.getText())) {
-					JOptionPane.showMessageDialog(null, "»ç¿ë ÁßÀÎ ÀÌ¸§ÀÔ´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì‚¬ìš© ì¤‘ì¸ ì´ë¦„ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 					btnAddTactics.setEnabled(false);
 					btnModTactics.setEnabled(false);
 				} else {
-					JOptionPane.showMessageDialog(null, "»ç¿ë °¡´ÉÇÑ ÀÌ¸§ÀÔ´Ï´Ù.");
+					JOptionPane.showMessageDialog(null, "ì‚¬ìš© ê°€ëŠ¥í•œ ì´ë¦„ì…ë‹ˆë‹¤.");
 					tfTacticsName.setEnabled(false);
 					btnDupCheck.setEnabled(false);
 					btnAddTactics.setEnabled(true);
@@ -143,7 +147,7 @@ public class TMFrame extends JFrame {
 			}
 		});
 		
-		JLabel labelFormation = new JLabel("Æ÷¸ŞÀÌ¼Ç");
+		JLabel labelFormation = new JLabel("í¬ë©”ì´ì…˜");
 		labelFormation.setBounds(20, 110, 60, 25);
 		panel.add(labelFormation);
 		
@@ -153,7 +157,7 @@ public class TMFrame extends JFrame {
 		panel.add(cbFormation);
 		int y=170;
 		for(int i=0; i<11; i++) {
-			playerIcon[i] = new JLabel(new ImageIcon("Images/uniform.png"));
+			playerIcon[i] = new JLabel(new ImageIcon(imageLoader.getImage("images/uniform.png")));
 			playerIcon[i].setOpaque(false);
 			playerIcon[i].setBounds(IconLoc532[i][0]+305, IconLoc532[i][1]+35, 40, 50);
 			labelPos1[i] = new JLabel(strPos532[i]);
@@ -256,7 +260,7 @@ public class TMFrame extends JFrame {
 		labelContourTeam2.setBackground(color);
 		panel.add(labelContourTeam2);
 		
-		JLabel labelCommnet = new JLabel("ÆÀ Àü¼ú ÄÚ¸àÆ®");
+		JLabel labelCommnet = new JLabel("íŒ€ ì „ìˆ  ì½”ë©˜íŠ¸");
 		labelCommnet.setBounds(20, 525, 100, 25);
 		panel.add(labelCommnet);
 		
@@ -264,12 +268,12 @@ public class TMFrame extends JFrame {
 		tfT_TacticsComment.setBounds(20, 550, 285, 25);
 		panel.add(tfT_TacticsComment);
 		
-		JLabel labelGroundImg = new JLabel(new ImageIcon("Images/ground.jpg"));
+		JLabel labelGroundImg = new JLabel(new ImageIcon(imageLoader.getImage("images/ground.jpg")));
 		labelGroundImg.setBounds(325, 60, 350, 540);
 		panel.add(labelGroundImg);
 		
-		JLabel labelP_Tactics = new JLabel("°³ÀÎÀü¼ú");
-		labelP_Tactics.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+		JLabel labelP_Tactics = new JLabel("ê°œì¸ì „ìˆ ");
+		labelP_Tactics.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 20));
 		labelP_Tactics.setForeground(color);
 		labelP_Tactics.setBounds(695, 75, 300, 30);
 		panel.add(labelP_Tactics);
@@ -280,7 +284,7 @@ public class TMFrame extends JFrame {
 		labelContourPlayer1.setBackground(color);
 		panel.add(labelContourPlayer1);
 		
-		btnAddTactics = new JButton("Àü¼ú Ãß°¡");
+		btnAddTactics = new JButton("ì „ìˆ  ì¶”ê°€");
 		btnAddTactics.setBounds(690, 475, 140, 30);
 		btnAddTactics.setBackground(color);
 		btnAddTactics.setForeground(Color.white);
@@ -319,18 +323,18 @@ public class TMFrame extends JFrame {
 				}
 				if(result1 == 0 && result2 == 11) {
 					if(tacticsDAO.addTactics(tacticsDTO)) {
-						JOptionPane.showMessageDialog(null, "Àü¼ú Ãß°¡°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "ì „ìˆ  ì¶”ê°€ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 						cbTactics = new JComboBox<String>(tacticsDAO.getTacticsName("load").toArray(new String[tacticsDAO.getTacticsName("load").size()]));
 					} else {
-						JOptionPane.showMessageDialog(null, "Àü¼ú Ãß°¡ Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù. È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ì „ìˆ  ì¶”ê°€ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤. í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "¼±¼ö¸¦ Ãß°¡ÇÏÁö ¾ÊÀº Æ÷Áö¼ÇÀÌ ÀÖ°Å³ª, Áßº¹µÈ ¼±¼ö°¡ ÀÖ½À´Ï´Ù. È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì„ ìˆ˜ë¥¼ ì¶”ê°€í•˜ì§€ ì•Šì€ í¬ì§€ì…˜ì´ ìˆê±°ë‚˜, ì¤‘ë³µëœ ì„ ìˆ˜ê°€ ìˆìŠµë‹ˆë‹¤. í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
 		
-		btnModTactics = new JButton("Àü¼ú ¼öÁ¤");
+		btnModTactics = new JButton("ì „ìˆ  ìˆ˜ì •");
 		btnModTactics.setBounds(840, 475, 140, 30);
 		btnModTactics.setBackground(color);
 		btnModTactics.setForeground(Color.white);
@@ -369,17 +373,17 @@ public class TMFrame extends JFrame {
 				}
 				if(result1 == 0 && result2 == 11) {
 					if(tacticsDAO.updateTactics(tacticsDTO)) {
-						JOptionPane.showMessageDialog(null, "Àü¼ú ¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+						JOptionPane.showMessageDialog(null, "ì „ìˆ  ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 					} else {
-						JOptionPane.showMessageDialog(null, "Àü¼ú ¼öÁ¤ Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù. È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ì „ìˆ  ìˆ˜ì • ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤. í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "¼±¼ö¸¦ Ãß°¡ÇÏÁö ¾ÊÀº Æ÷Áö¼ÇÀÌ ÀÖ°Å³ª, Áßº¹µÈ ¼±¼ö°¡ ÀÖ½À´Ï´Ù. È®ÀÎ ÈÄ ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.", "½ÇÆĞ", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ì„ ìˆ˜ë¥¼ ì¶”ê°€í•˜ì§€ ì•Šì€ í¬ì§€ì…˜ì´ ìˆê±°ë‚˜, ì¤‘ë³µëœ ì„ ìˆ˜ê°€ ìˆìŠµë‹ˆë‹¤. í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", "ì‹¤íŒ¨", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
 		
-		btnDelTactics = new JButton("Àü¼ú »èÁ¦");
+		btnDelTactics = new JButton("ì „ìˆ  ì‚­ì œ");
 		btnDelTactics.setBounds(690, 515, 140, 30);
 		btnDelTactics.setBackground(color);
 		btnDelTactics.setForeground(Color.white);
@@ -391,7 +395,7 @@ public class TMFrame extends JFrame {
 			}
 		});
 		
-		btnReset = new JButton("Àü¼úÆÇ ÃÊ±âÈ­");
+		btnReset = new JButton("ì „ìˆ íŒ ì´ˆê¸°í™”");
 		btnReset.setBounds(840, 515, 140, 30);
 		btnReset.setBackground(color);
 		btnReset.setForeground(Color.white);
@@ -411,11 +415,11 @@ public class TMFrame extends JFrame {
 				btnDupCheck.setEnabled(true);
 				btnAddTactics.setEnabled(false);
 				btnModTactics.setEnabled(false);
-				JOptionPane.showMessageDialog(null, "ÃÊ±âÈ­ µÇ¾ú½À´Ï´Ù.");
+				JOptionPane.showMessageDialog(null, "ì´ˆê¸°í™” ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 		});
 		
-		btnExit = new JButton("³ª°¡±â");
+		btnExit = new JButton("ë‚˜ê°€ê¸°");
 		btnExit.setBounds(840, 555, 140, 30);
 		btnExit.setBackground(color);
 		btnExit.setForeground(Color.white);
